@@ -6,6 +6,10 @@ const Hapi = require('hapi');
 const config = require('./config');
 const routesHelloHapi = require('./routes/hello-hapi');
 
+// 引入自定义的 hapi-swagger 插件配置
+const pluginHapiSwagger = require('./plugins/hapi-swagger');
+
+
 
 const server = new Hapi.Server();
 // 配置服务器启动 host 与端口
@@ -15,15 +19,15 @@ server.connection({
 });
 
 const init = async () => {
+
+  await server.register([
+    // 为系统使用 hapi-swagger
+    ...pluginHapiSwagger,
+  ]);
+
   server.route([
-    // 创建一个简单的 hello hapi 接口
-    {
-      method: 'GET',
-      path: '/',
-      handler: (request, reply) => {
-        reply('hello hapi');
-      },
-    },
+    // 创建一个简单的hello hapi接口
+    ...routesHelloHapi,
   ]);
   // 启动服务
   await server.start();
