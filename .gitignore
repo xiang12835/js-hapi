@@ -1,10 +1,10 @@
-.env
-.env.prod
-node_modules/
-package-lock.json
+!.env
+!.env.prod
+!node_modules/
+!package-lock.json
+!**/migrations/
+!**/seeders/
 
-**/migrations/
-**/seeders/
 **/db.sqlite3
 .idea/
 **/env2.7/
