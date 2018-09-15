@@ -5,7 +5,16 @@ const configs = require('../config/config.js');
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = configs[env];
+
+// const config = configs[env];
+// 希望遵循 MySQL 数据库表字段的下划线命名规范，所以，需要全局开启一个 underscore: true 的定义，来使系统中默认的 createdAt 与 updatedAt 能以下划线的方式，与表结构保持一致
+const config = {
+  ...configs[env],
+  define: {
+    underscored: true,
+  },
+};
+
 const db = {};
 let sequelize = null;
 
