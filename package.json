@@ -13,7 +13,9 @@
     "hapi": "^16.6.3",
     "hapi-swagger": "^7.10.0",
     "inert": "^4.2.1",
+    "mysql2": "^1.6.1",
     "package": "^1.0.1",
+    "sequelize": "^4.38.1",
     "vision": "^4.1.1"
   },
   "devDependencies": {
