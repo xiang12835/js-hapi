@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const { paginationDefine } = require('../utils/router-helper');
+const { jwtHeaderDefine } = require('../utils/router-helper');
 const models = require('../models');
 
 const GROUP_NAME = 'shops';
@@ -48,9 +49,14 @@ module.exports = [
 
     },
     config: {
+      auth: false,  // 一些特定接口不通过 JWT 验证
       tags: ['api', GROUP_NAME],
       description: '获取店铺列表',
       validate: {
+        // headers: Joi.object({  // header 入参校验
+        //   authorization: Joi.string().required(),
+        // }).unknown(),
+        ...jwtHeaderDefine, // 整理公共的 header 定义
         query: {
           ...paginationDefine,
         },

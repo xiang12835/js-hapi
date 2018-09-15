@@ -12,3 +12,12 @@ const paginationDefine = {
 }
 
 module.exports = { paginationDefine }
+
+
+const jwtHeaderDefine = {
+  headers: Joi.object({
+    authorization: Joi.string().required(),
+  }).unknown(),
+}
+
+module.exports = { jwtHeaderDefine }
