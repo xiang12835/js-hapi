@@ -1,6 +1,4 @@
-// routes/hello-hapi.js
 const { jwtHeaderDefine } = require('../utils/router-helper');
-
 
 module.exports = [
   {
@@ -9,7 +7,6 @@ module.exports = [
     handler: (request, reply) => {
       /*
       plugins/hapi-auth-jwt2.js 中的 credentials 定义
-
       const credentials = {
         userId,
       };
@@ -24,5 +21,5 @@ module.exports = [
         ...jwtHeaderDefine, // 增加需要 jwt auth 认证的接口 header 校验
       },
     },
-  }
-]
+  },
+];
