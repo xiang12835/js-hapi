@@ -4,6 +4,7 @@ node_modules/
 package-lock.json
 
 **/migrations/
+**/seeders/
 **/db.sqlite3
 .idea/
 **/env2.7/
