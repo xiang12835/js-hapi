@@ -40,8 +40,8 @@ module.exports = [
         method: 'POST',
         path: `/${GROUP_NAME}/wxLogin`,
         handler: async (req, reply) => {
-            const appid = config.AppID; // 你的小程序 appId
-            const secret = config.AppSecret; // 你的小程序 appSecret
+            const appid = config.wxAppId; // 你的小程序 appId
+            const secret = config.wxAppSecret; // 你的小程序 appSecret
             const { code, encryptedData, iv } = req.payload;
             // 向微信小程序开放平台 换取 openid 与 session_key
             const response = await axios({
