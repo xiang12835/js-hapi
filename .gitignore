@@ -1,9 +1,9 @@
-!.env
-!.env.prod
-!node_modules/
-!package-lock.json
-!**/migrations/
-!**/seeders/
+.env
+.env.prod
+node_modules/
+package-lock.json
+**/migrations/
+**/seeders/
 
 **/db.sqlite3
 .idea/
